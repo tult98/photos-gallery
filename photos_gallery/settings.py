@@ -133,3 +133,4 @@ STATICFILES_DIRS = [
 
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
+ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com']
