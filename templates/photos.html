@@ -8,26 +8,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700,900" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
   <link rel="stylesheet" href="{% static 'fonts/icomoon/style.css' %}">
 
-    <link rel="stylesheet" href="{% static 'css/my_style.css' %}">
-    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
-    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
-    <link rel="stylesheet" href="{% static 'css/jquery-ui.css' %}">
-    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
-    <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/my_style.css' %}">
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+  <link rel="stylesheet" href="{% static 'css/jquery-ui.css' %}">
+  <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
 
-    <link rel="stylesheet" href="{% static 'css/bootstrap-datepicker.css' %}">
+  <link rel="stylesheet" href="{% static 'css/bootstrap-datepicker.css' %}">
 
-    <link rel="stylesheet" href="{% static 'fonts/flaticon/font/flaticon.css' %}">
+  <link rel="stylesheet" href="{% static 'fonts/flaticon/font/flaticon.css' %}">
 
-    <link rel="stylesheet" href="{% static 'css/aos.css' %}">
-    <link rel="stylesheet" href="{% static 'css/jquery.scrollbar.css' %}">
-    <link rel="stylesheet" href="{% static 'css/fancybox.min.css' %}">
-    <link rel="stylesheet" href="{% static 'css/swiper.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/aos.css' %}">
+  <link rel="stylesheet" href="{% static 'css/jquery.scrollbar.css' %}">
+  <link rel="stylesheet" href="{% static 'css/fancybox.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/swiper.min.css' %}">
 
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <!-- <style>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <!-- <style>
       
     </style> -->
 
@@ -54,25 +55,37 @@
         </div>
 
         {% if photos.has_other_pages %}
-        <ul class="pagination">
+        <div class="pagination">
+
           {% if photos.has_previous %}
-          <li><a href="?page={{ users.previous_page_number }}">&laquo;</a></li>
-          {% else %}
-          <li class="disabled"><span>&laquo;</span></li>
+          <a class="pagination-action" href="?page=1">
+            <i class="fa fa-angle-double-left" aria-hidden="true"></i>
+          </a>
+          <a class="pagination-action" href="?page={{ photos.previous_page_number }}">
+            <i class="fa fa-angle-left" aria-hidden="true"></i>
+          </a>
           {% endif %}
-          {% for i in photos.paginator.page_range %}
-          {% if photos.number == i %}
-          <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
-          {% else %}
-          <li><a href="?page={{ i }}">{{ i }}</a></li>
+
+          {% for num in photos.paginator.page_range %}
+
+          {% if photos.number == num %}
+          <span class="pagination-number pagination-current">{{ num }}</span>
+          {% elif num > photos.number|add:'-3' and num < photos.number|add:'3' %}
+          <a class="pagination-number" href="?page={{ num }}">{{ num }}</a>
           {% endif %}
+
           {% endfor %}
+
           {% if photos.has_next %}
-          <li><a href="?page={{ users.next_page_number }}">&raquo;</a></li>
-          {% else %}
-          <li class="disabled"><span>&raquo;</span></li>
+          <a class="pagination-action" href="?page={{ photos.next_page_number }}">
+            <i class="fa fa-angle-right" aria-hidden="true"></i>
+          </a>
+          <a class="pagination-action" href="?page={{ photos.paginator.num_pages }}">
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+          </a>
           {% endif %}
-        </ul>
+
+        </div>
         {% endif %}
 
         <div class="row justify-content-center">
