@@ -1,6 +1,6 @@
 
-# Created by https://www.gitignore.io/api/python,django,visualstudiocode
-# Edit at https://www.gitignore.io/?templates=python,django,visualstudiocode
+# Created by https://www.gitignore.io/api/python,django
+# Edit at https://www.gitignore.io/?templates=python,django
 
 ### Django ###
 *.log
@@ -166,14 +166,4 @@ dmypy.json
 
 # Pyre type checker
 
-### VisualStudioCode ###
-.vscode/*
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
-
-### VisualStudioCode Patch ###
-# Ignore all local history of files
-.history
-
-# End of https://www.gitignore.io/api/python,django,visualstudiocode
+# End of https://www.gitignore.io/api/python,django
