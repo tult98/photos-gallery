@@ -1,9 +1,10 @@
 .pagination {
-    margin: 50%;
     margin-top: 1em;
+    display: inline-block;
 }
 
 .pagination a {
+    display: block;
     color: white;
     float: left;
     padding: 8px 16px;
@@ -16,6 +17,10 @@
     padding: 8px 16px;
 } */
 
+span.pagination-number.pagination-current {
+    background-color:rgb(243, 43, 43);
+}
+
 .pagination-number {
     padding: 8px 16px;
     border-radius: 2px;
@@ -26,6 +31,7 @@
 .pagination-number:hover,
 .pagination-current {
     background-color: #3354AA;
+    color: white;
 }
 
 .pagination-action {
