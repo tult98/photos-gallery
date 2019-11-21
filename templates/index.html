@@ -36,7 +36,8 @@
         <div class="swiper-wrapper">
             {% for photo in photos %}
                 <div class="swiper-slide cover"
-                style="background-image: url({{photo.url}});background-size: contain;">
+                style="background-image: url({{photo.url}});background-size: contain;
+                background-color: black;">
                 <a href={{photo.url}} data-fancybox="gallery" class="zoom"><span
                     class="icon-search"></span></a>
                 </div>
