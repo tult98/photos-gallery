@@ -6,7 +6,7 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 # Create your views here.
 def home(request):
     i = random.randint(0, 1001)
-    photos = Photo.objects.all()
+    photos = Photo.objects.all()[i:i+20]
     return render(request, 'index.html', {'photos': photos})
 
 def photos(request):

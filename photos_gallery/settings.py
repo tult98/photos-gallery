@@ -27,8 +27,15 @@ SECRET_KEY = '2_rd3yp5vro3@npoi8pp6$pcfk76sl6mj3=_zw(sie*enjwto*'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+# setting for rest_framework
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.TokenAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+    ),
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 30
+}
 
 # Application definition
 
@@ -39,7 +46,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'apis',
     'photos',
+    'rest_framework',
+    'djoser',
 ]
 
 MIDDLEWARE = [
