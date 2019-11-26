@@ -19,7 +19,7 @@ from photos import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('apis/v1/', include('apis.urls')),
+    path('api/v1/', include('apis.urls')),
     path('', views.home, name='home'),
     path('images/', views.photos, name='photos'),
 ]

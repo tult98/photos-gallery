@@ -5,7 +5,7 @@ from . import views
 
 router = routers.DefaultRouter()
 
-router.register('photos', views.PhotoAPIView)
+router.register("photos", views.PhotoAPIView)
 
 urlpatterns = [
     path("", include(router.urls)), 
