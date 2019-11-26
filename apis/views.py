@@ -5,5 +5,5 @@ from .serializers import PhotoSerialize
 # Create your views here.
 
 class PhotoAPIView(viewsets.ModelViewSet):
-    queryset = Photo.objects.all()
+    queryset = Photo.objects.all()[:60]
     serializer_class = PhotoSerialize

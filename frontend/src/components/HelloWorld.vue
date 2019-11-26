@@ -1,10 +1,22 @@
 <template>
   <div class="hello">
-    <ul>
-      <li v-for="post in posts" v-bind:key="post">
-        <img v-bind:src="post.url" alt="">
-      </li>
-    </ul>
+    <div class="site-wrap">
+    <main class="main-content">
+      <div class="container-fluid photos">
+        <div class="row align-items-stretch">
+          <div v-for="photo in photos" v-bind:key="photo" class="col-6 col-md-6 col-lg-4" data-aos="fade-up">
+            <a v-bind:href="photo.url" class="d-block photo-item" data-fancybox="gallery">
+              <img v-bind:src="photo.url" alt="Image" class="img-fluid">
+              <div class="photo-text-more">
+                <span class="icon icon-search"></span>
+              </div>
+            </a>
+          </div>
+        </div>    
+      </div>
+    </main>
+
+  </div> <!-- .site-wrap -->
   </div>
 </template>
 
@@ -18,14 +30,14 @@ export default {
   },
   data() {
     return {
-      posts: null,
+      photos: null,
     };
   },
   created: function() {
     axios
       .get("http://127.0.0.1:8000/api/v1/photos/")
       .then(res => {
-        this.posts = res.data;
+        this.photos = res.data;
       })
   }
 }
