@@ -42,6 +42,7 @@ REST_FRAMEWORK = {
 # Application definition
 
 INSTALLED_APPS = [
+    'photos.apps.PhotosConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -49,7 +50,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'apis',
-    'photos',
     'rest_framework',
     'corsheaders',
 ]

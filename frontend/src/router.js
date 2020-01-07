@@ -4,6 +4,7 @@ import Home from './views/Home';
 import PhotosList from './views/PhotosList';
 import About from './views/About';
 import Upload from './views/Upload';
+import NotFound from './components/NotFound';
 
 Vue.use(Router)
 
@@ -29,6 +30,11 @@ export default new Router({
             path: '/upload', 
             name: 'upload', 
             component: Upload
+        },
+        {
+            path: '*', 
+            name: 'NotFound',
+            component: NotFound
         }
     ]
 })
