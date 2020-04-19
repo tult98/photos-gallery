@@ -16,6 +16,7 @@ class PhotoListAPIView(ListAPIView):
     queryset = Photo.objects.all()
     serializer_class = PhotoListSeriaLize
 
+
 class PhotoDetailAPIView(RetrieveAPIView):
     queryset = Photo.objects.all()
     serializer_class = PhotoDetailSerialize

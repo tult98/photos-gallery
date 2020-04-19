@@ -2,6 +2,7 @@ from django.shortcuts import render
 from .models import Photo
 import random
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from rest_framework.decorators import api_view
 
 # Create your views here.
 def home(request):
